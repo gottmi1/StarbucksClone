@@ -26,8 +26,20 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
   <link rel="stylesheet" href="css/main.css" />
+
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+    integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"
+    integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+  <script defer src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script defer src="./js/main.js"></script>
 </head>
 
@@ -361,10 +373,72 @@
         </li>
 
     </div>
+
+    <div class="badges">
+      <div class="badge">
+        <img src="./images/badge1.jpg" alt="badge1" />
+      </div>
+      <div class="badge">
+        <img src="./images/badge2.jpg" alt="badge1" />
+      </div>
+
+    </div>
   </header>
 
-  <!-- section -->
-  <section></section>
+  <!-- VISUAL -->
+  <section class="visual">
+    <div class="inner">
+
+      <div class="title fade-in">
+        <img src="./images/visual_title.png" alt="Delightful" />
+        <a href="#" class="btn btn--brown">자세히보기</a>
+      </div>
+      <div class="cup1_div fade-in">
+        <img src="./images/visual_cup1.png" alt="oatmeal latte" class="cup1 image" />
+        <img src="./images/visual_cup1_text.png" alt="oatmeal latte text" class="cup1 text" />
+      </div>
+      <div class="cup2_div fade-in">
+        <img src="./images/visual_cup2.png" alt="oatmeal latte" class="cup2 image" />
+        <img src="./images/visual_cup2_text.png" alt="oatmeal latte text" class="cup2 text" />
+      </div>
+      <div class="spoon_div fade-in">
+        <img src="./images/visual_spoon.png" alt="spoon" class="spoon" />
+      </div>
+    </div>
+  </section>
+
+  <!-- NOTICE -->
+  <section class="notice">
+
+    <div class="notice-line">
+      <div class="bg-left"></div>
+      <div class="bg-right"></div>
+      <div class="inner">
+        <div class="inner__left">
+          <h2>공지사항</h2>
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide"><a href="#">크리스마스 & 연말연시 스타벅스 매장 여업시간 변경 안내</a></div>
+              <div class="swiper-slide"><a href="#">[당첨자 발표] 2022 스타벅스 플래너 영수증 이벤트</a></div>
+              <div class="swiper-slide"><a href="#">스타벅스 커피 코리아 애플리케이션 버전 업데이트</a></div>
+              <div class="swiper-slide"><a href="#">[당첨자 발표] 뉴이어 전자 영수증 이벤트</a></div>
+            </div>
+          </div>
+          <div class="notice-line__more">
+            <div class="material-symbols-outlined">add_circle</div>
+          </div>
+        </div>
+        <div class="inner__right">
+          <h2>스타벅스 프로모션</h2>
+          <div class="toggle-promotion">
+            <div class="material-symbols-outlined">upload</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
 
   <!-- footer -->
   <footer></footer>
