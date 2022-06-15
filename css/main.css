@@ -9,7 +9,7 @@ body {
   font-weight: 400;
   line-height: 1.4;
   font-family: 'Nanum Gothic', sans-serif;
-  height: 3000px;
+  height: 5000px;
 }
 
 /* img는 인라인이기 때문에 베이스라인을 가져서 아랫부분에 약간 공백이 생기 떄문에 해줌 */
@@ -77,14 +77,11 @@ a {
 }
 .btn.btn--white:hover{
   background-color: #fff;
-  color: #fff;
+  color: #000;
 }
-
-/* .di-none{
-  display: none;
-}
-.di-bl{
-  display: block;
+/* .hide {
+  height: 0;
+  transition: 500ms;
 } */
 
 /* header */
@@ -349,23 +346,25 @@ header .badges .badge{
   position: relative;
 }
 
-.notice .notice-line{}
+.notice .notice-line{
+  height: 62px;
+}
 
 .notice .notice-line .bg-left{
   position: absolute;
   top: 0%;
   left: 0%;
   width: 50%;
-  height: 100%;
+  height: 62px;
   background-color: #333;
+} 
 
-}
 .notice .notice-line .bg-right{
   position: absolute;
   top: 0%;
   right: 0%;
   width: 50%;
-  height: 100%;
+  height: 62px;
   background-color: #f6f5ef;
 }
 .notice .notice-line .inner{
@@ -422,6 +421,19 @@ header .badges .badge{
   font-weight: 700;
 }
 
+.notice .notice-line .inner .inner__right .material-symbols-outlined {
+  font-size: 30px;
+}
+
+.notice .notice-line .swiper-slide{
+  display: flex;
+  align-items: center;
+}
+
+.notice .notice-line .swiper-slide a{
+  color: #fff;
+}
+
 .notice .notice-line .inner .inner__right .toggle-promotion {
   width: 62px;
   height: 62px;
@@ -431,15 +443,261 @@ header .badges .badge{
   align-items: center;
 }
 
-.notice .notice-line .inner .inner__right .material-symbols-outlined {
-  font-size: 30px;
+.notice .promotion {
+  height: 693px;
+  position: relative;
+  overflow: hidden;
+  background-color: white;
+  transition: height .4s;
 }
 
-.notice .swiper-slide{
+.notice .promotion .swiper-container {
+  width: calc(819px * 3 + 20px);
+  height: 553px;
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  /* margin-left: calc((819px * 3 + 20px) / -2); */
+}
+.notice .promotion .swiper-slide{
+  opacity: .5;
+  transition: opacity 1s;
+  position: relative;
+}
+
+.notice .promotion .swiper-slide-active {
+  opacity: 1;
+}
+
+.notice .promotion .btn {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.notice .promotion .swiper-pagination {
+  bottom: 40px;
+}
+
+.notice .promotion .swiper-pagination-bullet {
+  background-color: transparent;
+  background-image: url(../images/promotion_slide_pager.png);
+  width: 14px;
+  height: 14px;
+  margin-right: 6px;
+}
+
+.notice .promotion .swiper-pagination-bullet:last-child{
+  margin-right: 0;
+}
+
+.notice .promotion .swiper-pagination-bullet-active {
+  background-image: url(../images/promotion_slide_pager_on.png);
+  background-repeat: no-repeat;
+}
+
+.notice .promotion .swiper-prev,
+.notice .promotion .swiper-next {
+  width: 42px;
+  height: 42px;
+  border: 2px solid #333;
+  border-radius: 50%;
+  position: absolute;
+  top: 300px;
+  z-index: 10;
+  cursor: pointer;
+  outline: none;
   display: flex;
+  justify-content: center;
   align-items: center;
+  transition: background-color .4s ,color .4s;
+}
+.notice .promotion .swiper-prev {
+  left: 50%;
+  margin-left: -480px;
+}
+.notice .promotion .swiper-next {
+  right: 50%;
+  margin-right: -480px;
 }
 
-.notice .swiper-slide a{
+.notice .promotion .swiper-prev:hover,
+.notice .promotion .swiper-next:hover {
+  background-color: #000;
   color: #fff;
+}
+
+/* rewards */
+
+.rewards{
+  position: relative;
+}
+.rewards .bg-left{
+  width: 50%;
+  height: 100%;
+  background-color: #272727;
+  position: absolute;
+}
+.rewards .bg-right{
+  width: 50%;
+  height: 100%;
+  background-color: #d5c798;
+  position: absolute;
+  right: 0;
+}
+.rewards .inner{
+  background-image: url(../images/rewards.jpg);
+  height: 241px;
+}
+
+.rewards .btn-group{
+  position: absolute;
+  bottom: 24px;
+  right: 0;
+  width: 250px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.rewards .btn-group .btn.sign-up{
+  margin-right: 10px;
+}
+.rewards .btn-group .btn.sign-in{
+  width: 110px;
+}
+.rewards .btn-group .btn.gift{
+  margin-top: 10px;
+  flex-grow: 1;
+}
+
+.youtube{
+  position: relative;
+  height: 700px;
+  background-color: #333;
+  overflow: hidden;
+}
+.youtube .youtube__area{
+  width: 1920px;
+  background-color: red;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.youtube .youtube__area::before{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 0;
+  padding-top: 56.25%;
+
+}
+.youtube .youtube__cover{
+  background-image: url(../images/video_cover_pattern.png);
+  background-color: rgba(0,0,0,.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#player{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.youtube .inner {
+  height: 700px;
+}
+
+.youtube .floating{
+  position: absolute;
+}
+.youtube .floating1 {
+  top: 50px;
+  left: 0;
+}
+.youtube .floating2 {
+  top: 350px;
+  left: 150px;
+}
+.season-product .floating3 {
+  position: absolute;
+  top: -200px;
+  right: 0;
+}
+
+.season-product{
+  background-image: url(../images/season_product_bg.jpg);
+}
+.season-product .inner{
+  height: 400px;
+}
+.season-product .text-group{
+  position: absolute;
+  top: 110px;
+  right: 100px;
+}
+.season-product .text-group .title{
+  margin-bottom: 10px;
+}
+.season-product .text-group .description{
+  margin-bottom: 15px;
+}
+
+.season-product .more{}
+
+/* reseve coffee */
+.reserve-coffee{
+  background-image: url(../images/reserve_bg.jpg)
+}
+.reserve-coffee .inner{
+  height: 400px;
+}
+.reserve-coffee .reserve-logo{
+  position: absolute;
+  top: 110px;
+  left: 0;
+}
+.reserve-coffee .text-group {
+  position: absolute;
+  top: 124px;
+  left: 208px;
+}
+.reserve-coffee .product {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* favorite */
+.favorite{
+  background-image: url(../images/favorite_bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.favorite .inner{
+  padding: 110px 0;
+}
+.favorite .text-group{
+  margin-left: 100px;
+  display: flex;
+  width: 362px;
+  flex-wrap: wrap;
+  justify-content: end;
+}
+.favorite .text-group .title{
+  margin-bottom: 40px;
+}
+.favorite .text-group .description{
+  margin-bottom: 40px;
+
 }
