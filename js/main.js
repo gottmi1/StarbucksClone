@@ -125,3 +125,6 @@ spyEls.forEach((el) => {
     .setClassToggle(el, "show") // toggle할 요소 , "클래스명" == replace
     .addTo(new ScrollMagic.Controller());
 });
+
+const thisYear = document.querySelector(".this-year");
+thisYear.textContent = new Date().getFullYear();
